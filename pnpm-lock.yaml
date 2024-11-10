@@ -20,7 +20,7 @@ specifiers:
   esbuild-sass-plugin: ^2.12.0
   rollup: ^4.1.4
   rollup-plugin-scss: ^4.0.0
-  rollup-plugin-typora: npm:@typora-community-plugin/rollup-plugin-typora@^1.0.3
+  rollup-plugin-typora: npm:@typora-community-plugin/rollup-plugin-typora@^1.0.5
   sass: ^1.69.5
   tslib: ^2.6.2
   typescript: ^5.1.6
@@ -45,7 +45,7 @@ devDependencies:
   esbuild-sass-plugin: 2.16.0_esbuild@0.19.2
   rollup: 4.2.0
   rollup-plugin-scss: 4.0.0
-  rollup-plugin-typora: /@typora-community-plugin/rollup-plugin-typora/1.0.3
+  rollup-plugin-typora: /@typora-community-plugin/rollup-plugin-typora/1.0.5
   sass: 1.69.5
   tslib: 2.6.2
   typescript: 5.2.2
@@ -1723,8 +1723,8 @@ packages:
     resolution: {integrity: sha512-iOEM8e0Y7/83dqVHm2HX9XglL0BD0t4NTbH4PKtea7ohrOxI/frkWb4nHW4iMoxp5mVBdCf5QUpcm3H6DeIfdQ==}
     dev: true
 
-  /@typora-community-plugin/rollup-plugin-typora/1.0.3:
-    resolution: {integrity: sha512-rcleaQuT1nXy5DfmNzMNdOPqrsJcrBGGFI/R8L5mRC6hWQWq5/fQlZQconSBKSSC3kRiwmLSTkFr1ihoqek7eA==}
+  /@typora-community-plugin/rollup-plugin-typora/1.0.5:
+    resolution: {integrity: sha512-oNigMG4r5t+dwLs4N4Dn7xZviKBPbKYIGJQPAsIJIGtA06Wdw1i+FNMInGFbt3Ff1jKlikr52OmCAkMxmEcXGA==}
     dev: true
 
   /@typora-community-plugin/typora-types/1.0.11:
