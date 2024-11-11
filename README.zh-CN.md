@@ -54,3 +54,15 @@ tp.writeNoteTo(title)  // 你的笔记将要保存的文件路径，相对于笔
 
 # {{icon}} {{title}}
 ````
+
+## API
+
+全局变量: `tp`
+
+- `quickInput(options?): Promise<string>`
+  - options: `{ placeholder?: string }`
+- `quickPick(items: string[], options?): Promise<string | string[]>`
+  - options: `{ placeholder?: string, canPickMany?: boolean }`
+    > 如果 `canPickMany` 为 `false`, `quickPick()` 会返回 `string`
+    > 如果 `canPickMany` 为 `true`, `quickPick()` 会返回 `string[]`
+- `writeNoteTo(path: string): void`

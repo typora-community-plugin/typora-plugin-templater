@@ -54,3 +54,15 @@ tp.writeNoteTo(title)  // The file path will be saved, it is relative to your va
 
 # {{icon}} {{title}}
 ````
+
+## API
+
+global variable: `tp`
+
+- `quickInput(options?): Promise<string>`
+  - options: `{ placeholder?: string }`
+- `quickPick(items: string[], options?): Promise<string | string[]>`
+  - options: `{ placeholder?: string, canPickMany?: boolean }`
+    > If `canPickMany` is `false`, `quickPick()` will return `string`
+    > If `canPickMany` is `true`, `quickPick()` will return `string[]`
+- `writeNoteTo(path: string): void`
