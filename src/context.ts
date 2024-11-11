@@ -17,7 +17,7 @@ export class TemplateContext {
   }
 
   quickInput(options?: Parameters<typeof openInputBox>[0]) {
-    return openInputBox(options)
+    return openInputBox({ ...options, title: 'Templater' })
       .then(text => {
         if (text) return text
         else return Promise.reject(USER_CANCELED)
@@ -25,9 +25,14 @@ export class TemplateContext {
   }
 
   quickPick(items: string[], options?: Parameters<typeof openQuickPick>[1]) {
-    return openQuickPick(items.map(label => ({ label })), options)
-      .then(item => {
-        if (item) return item.label
+    return openQuickPick(items.map(label => ({ label })), { ...options, title: 'Templater' })
+      .then((item: any) => {
+        if (item) {
+          if (options?.canPickMany)
+            return item.map((i: any) => i.label)
+          else
+            return item.label
+        }
         else return Promise.reject(USER_CANCELED)
       })
   }
