@@ -1,6 +1,7 @@
 import { TemplateContext } from "./context"
 
 
+const RE_FRONT_MATTER = /^---\n([\s\S]+?)\n---\n?/
 const RE_CODE_BLOCK = /\n?```j(?:ava)?s(?:cript)?\n([\s\S]+?)\n```/
 
 export function parseTemplate(rawTemplate: string) {
@@ -18,6 +19,20 @@ export function parseTemplate(rawTemplate: string) {
     })
 
   return { template, code }
+}
+
+export function parseMarkdown(md: string) {
+  let frontMatter = ''
+
+  const content = md
+    .replace(RE_FRONT_MATTER, (_, $1) => {
+      frontMatter = $1
+      return ''
+    })
+
+  const frontMatters = frontMatter.split(/\n(?=\S)/)
+
+  return { frontMatters, content }
 }
 
 const AsyncFunction = async function () { }.constructor;

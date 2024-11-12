@@ -14,8 +14,7 @@ const tags = await tp.quickPick(
     canPickMany: true,
   })
   .then(res => res.join(', '))
-
-tp.writeNoteTo(title)
 ```
 
 # {{title}}
+

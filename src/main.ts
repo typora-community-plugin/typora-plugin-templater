@@ -2,7 +2,7 @@ import { editor } from 'typora'
 import { fs, Notice, path, Plugin, PluginSettings, openQuickPick } from '@typora-community-plugin/core'
 import { DEFAULT_SETTINGS, TemplaterSettings } from './settings'
 import { TemplaterSettingTab } from './setting-tab'
-import { buildFunction, parseTemplate } from './template'
+import { buildFunction, parseMarkdown, parseTemplate } from './template'
 import { TemplateContext, USER_CANCELED } from './context'
 
 
@@ -91,6 +91,14 @@ export default class TemplaterPlugin extends Plugin<TemplaterSettings> {
   }
 
   pasteNote(md: string) {
-    editor.UserOp.pasteHandler(editor, md, true)
+    const { frontMatters, content } = parseMarkdown(md)
+
+    // merge frontmatters
+    frontMatters.forEach(p => {
+      const [, key, value] = p.match(/^(\w+):\s*(.*)$/) ?? []
+      editor.docMenu.writeProperty(key, value)
+    })
+
+    editor.UserOp.pasteHandler(editor, content, true)
   }
 }
