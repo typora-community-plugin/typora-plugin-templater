@@ -49,10 +49,14 @@ export default class TemplaterPlugin extends Plugin<TemplaterSettings> {
   templates: string[] = []
 
   get templatesDir() {
+    const dir = this.settings.get('templatesDir')
+
+    if (path.isAbsolute(dir)) return dir
+
     const templatesRoot = this.app.config.isUsingGlobalConfig
       ? this.app.config.configDir
       : this.app.vault.path
-    return path.join(templatesRoot, this.settings.get('templatesDir'))
+    return path.join(templatesRoot, dir)
   }
 
   loadTemplates() {
