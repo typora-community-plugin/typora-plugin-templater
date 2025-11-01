@@ -14,7 +14,7 @@ import { virtualModules } from 'rollup-plugin-typora'
 const { compilerOptions } = JSON.parse(await fs.readFile('./tsconfig.json', 'utf8'))
 
 const overrided = {
-  "target": "ES5",
+  "target": "ES2017",
   "downlevelIteration": true,
 
   "module": undefined,

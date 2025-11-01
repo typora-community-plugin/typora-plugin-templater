@@ -9,6 +9,12 @@ import { TemplateContext, USER_CANCELED } from './context'
 export default class TemplaterPlugin extends Plugin<TemplaterSettings> {
 
   onload() {
+    if (!canUseAsync()) {
+      setTimeout(() => this.app.plugins.disablePlugin(this.manifest.id))
+      new Notice('[Templater] Not support `async`.')
+      throw new Error('[Templater] Not support `async`.')
+    }
+
     this.registerSettings(
       new PluginSettings(this.app, this.manifest, {
         version: 1,
@@ -104,5 +110,14 @@ export default class TemplaterPlugin extends Plugin<TemplaterSettings> {
     })
 
     editor.UserOp.pasteHandler(editor, content, true)
+  }
+}
+
+function canUseAsync() {
+  try {
+    new Function('async function test() {}');
+    return true;
+  } catch (e) {
+    return false;
   }
 }
