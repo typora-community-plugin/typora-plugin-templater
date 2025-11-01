@@ -1,6 +1,6 @@
 # Typora Plugin Templater
 
-English | [简体中文](https://github.com/typora-community-plugin/typora-plugin-wikilink/blob/main/README.zh-CN.md)
+English | [简体中文](https://github.com/typora-community-plugin/typora-plugin-templater/blob/main/README.zh-CN.md)
 
 This a plugin based on [typora-community-plugin](https://github.com/typora-community-plugin/typora-community-plugin) for [Typora](https://typora.io).
 
