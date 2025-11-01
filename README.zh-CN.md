@@ -65,4 +65,5 @@ tp.writeNoteTo(title)  // 你的笔记将要保存的文件路径，相对于笔
   - options: `{ placeholder?: string, canPickMany?: boolean }`
     > 如果 `canPickMany` 为 `false`, `quickPick()` 会返回 `string`
     > 如果 `canPickMany` 为 `true`, `quickPick()` 会返回 `string[]`
-- `writeNoteTo(path: string): void`
+- `writeNoteTo(path: string, options?): void`
+  - options: `{ openNote: true }`

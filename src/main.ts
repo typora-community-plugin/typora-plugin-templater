@@ -42,7 +42,7 @@ export default class TemplaterPlugin extends Plugin<TemplaterSettings> {
             const tp = new TemplateContext(this)
             this.runTemplate(tp, t.label)
               .then(md => tp.__filename
-                ? this.createNote(tp, md)
+                ? (this.createNote(tp, md), tp.__opennote && this.openNote(tp))
                 : this.pasteNote(md))
               .catch(reason => reason === USER_CANCELED
                 ? Promise.resolve()
@@ -98,6 +98,10 @@ export default class TemplaterPlugin extends Plugin<TemplaterSettings> {
       .catch(() =>
         fs.writeText(mdPath, md)
           .then(() => notice.close()))
+  }
+
+  openNote(tp: TemplateContext) {
+    return this.app.openFile(tp.__filename)
   }
 
   pasteNote(md: string) {

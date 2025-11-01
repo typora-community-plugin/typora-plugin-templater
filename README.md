@@ -65,4 +65,5 @@ global variable: `tp`
   - options: `{ placeholder?: string, canPickMany?: boolean }`
     > If `canPickMany` is `false`, `quickPick()` will return `string`
     > If `canPickMany` is `true`, `quickPick()` will return `string[]`
-- `writeNoteTo(path: string): void`
+- `writeNoteTo(path: string, options?): void`
+  - options: `{ openNote: true }`

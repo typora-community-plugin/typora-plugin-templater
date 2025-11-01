@@ -11,6 +11,7 @@ export class TemplateContext {
   [plugin]: TemplaterPlugin
 
   __filename: string
+  __opennote = false
 
   constructor(templater: TemplaterPlugin) {
     this[plugin] = templater
@@ -37,12 +38,13 @@ export class TemplateContext {
       })
   }
 
-  async writeNoteTo(mdPath: string) {
+  writeNoteTo(mdPath: string, options?: { openNote: boolean }) {
     const ext = path.extname(mdPath)
     if (ext !== '.md') {
       mdPath += '.md'
     }
 
     this.__filename = path.join(app.vault.path, mdPath)
+    this.__opennote = options?.openNote ?? false
   }
 }
