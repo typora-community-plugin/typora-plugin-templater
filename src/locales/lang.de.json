@@ -1,0 +1,8 @@
+{
+  "templateFolder": "Templater-Ordner",
+  "templateFolderDesc": "- Der Ordner enthält beliebige Markdown-Dateien. - Neuladen-Schaltfläche: lädt die Vorlagenliste aus dem Ordner neu, nachdem der Pfad geändert wurde oder Dateien darin hinzugefügt/entfernt wurden.\n - Ordner öffnen-Schaltfläche: öffnet den Vorlagenordner, um Vorlagendatei hinzuzufügen.",
+  "open": "Ordner öffnen",
+  "reload": "Neuladen",
+  "reloadedSuccessMsg": "Vorlagen erfolgreich geladen.",
+  "reloadedEmptyMsg": "Keine Vorlagen gefunden."
+}
