@@ -1,0 +1,8 @@
+{
+  "templateFolder": "模板文件夹",
+  "templateFolderDesc": "- 该文件夹包含任意数量 Markdown 文件。\n - 重新加载按钮：手动从文件夹中重新加载模板列表，适用于修改了文件夹路径或添加/删除了文件。\n - 打开文件夹按钮：打开模板文件夹以添加模板文件",
+  "open": "打开文件夹",
+  "reload": "重新加载",
+  "reloadedSuccessMsg": "模板加载成功。",
+  "reloadedEmptyMsg": "没有找到任何模板。"
+}

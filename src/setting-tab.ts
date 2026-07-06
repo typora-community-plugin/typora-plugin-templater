@@ -1,6 +1,7 @@
 import { JSBridge } from "typora"
-import { App, fs, I18n, Notice, SettingTab } from "@typora-community-plugin/core"
+import { App, fs, I18n, Notice, SettingTab, path } from "@typora-community-plugin/core"
 import type TemplaterPlugin from "./main"
+import * as Locale from './locales/lang.en.json'
 import { DEFAULT_SETTINGS } from "./settings"
 
 
@@ -10,25 +11,8 @@ export class TemplaterSettingTab extends SettingTab {
     return 'Templater'
   }
 
-  i18n = new I18n({
-    resources: {
-      'en': {
-        templateFolder: 'Templater folder',
-        templateFolderDesc: '- The folder includes any markdown file. - Reload button: reload templates list from folder, after changed path or files in it.\n - Open folder button: open templates folder to add template files.',
-        open: 'Open folder',
-        reload: 'Reload',
-        reloadedSuccessMsg: 'Templates load successfully.',
-        reloadedEmptyMsg: 'No templates be found.',
-      },
-      'zh-cn': {
-        templateFolder: '模板文件夹',
-        templateFolderDesc: '- 该文件夹包含任意数量 Markdown 文件。\n - 重新加载按钮：手动从文件夹中重新加载模板列表，适用于修改了文件夹路径或添加/删除了文件。\n - 打开文件夹按钮：打开模板文件夹以添加模板文件',
-        open: '打开文件夹',
-        reload: '重新加载',
-        reloadedSuccessMsg: '模板加载成功。',
-        reloadedEmptyMsg: '没有找到任何模板。',
-      },
-    }
+  i18n = new I18n<typeof Locale>({
+    localePath: path.join(this.plugin.manifest.dir!, 'locales')
   })
 
   constructor(

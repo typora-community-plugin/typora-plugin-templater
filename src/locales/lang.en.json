@@ -1,0 +1,8 @@
+{
+  "templateFolder": "Templater folder",
+  "templateFolderDesc": "- The folder includes any markdown file. - Reload button: reload templates list from folder, after changed path or files in it.\n - Open folder button: open templates folder to add template files.",
+  "open": "Open folder",
+  "reload": "Reload",
+  "reloadedSuccessMsg": "Templates load successfully.",
+  "reloadedEmptyMsg": "No templates be found."
+}
