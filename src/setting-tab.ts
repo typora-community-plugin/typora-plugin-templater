@@ -11,15 +11,16 @@ export class TemplaterSettingTab extends SettingTab {
     return 'Templater'
   }
 
-  i18n = new I18n<typeof Locale>({
-    localePath: path.join(this.plugin.manifest.dir!, 'locales')
-  })
+  i18n!: I18n<typeof Locale>
 
   constructor(
     private app: App,
     private plugin: TemplaterPlugin
   ) {
     super()
+    this.i18n = new I18n<typeof Locale>({
+      localePath: path.join(plugin.manifest.dir!, 'locales')
+    })
 
     this.render()
   }
