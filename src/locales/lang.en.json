@@ -1,4 +1,8 @@
 {
+  "useTemplate": "Use Template",
+  "notSupportAsync": "[Templater] Not support `async`.",
+  "writingFile": "[Templater] Writing file...",
+  "fileAlreadyExists": "[Templater] Error: The file already exists.",
   "templateFolder": "Templater folder",
   "templateFolderDesc": "- The folder includes any markdown file. - Reload button: reload templates list from folder, after changed path or files in it.\n - Open folder button: open templates folder to add template files.",
   "open": "Open folder",
